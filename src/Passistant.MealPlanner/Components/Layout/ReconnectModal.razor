@@ -1,51 +1,5 @@
 ﻿<script type="module" src="@Assets["Components/Layout/ReconnectModal.razor.js"]"></script>
 
-<style>
-    #components-reconnect-modal {
-        background-color: var(--mud-palette-surface);
-        color: var(--mud-palette-text-primary);
-        width: 24rem;
-        margin: 20vh auto;
-        padding: 2rem;
-        border: 0;
-        border-radius: var(--mud-default-borderradius);
-        box-shadow: var(--mud-elevation-8);
-    }
-
-    #components-reconnect-modal::backdrop {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .components-reconnect-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        text-align: center;
-    }
-
-    .components-reconnect-first-attempt-visible,
-    .components-reconnect-repeated-attempt-visible,
-    .components-reconnect-failed-visible,
-    .components-pause-visible,
-    .components-resume-failed-visible,
-    .components-rejoining-animation {
-        display: none;
-    }
-
-    #components-reconnect-modal.components-reconnect-show .components-reconnect-first-attempt-visible,
-    #components-reconnect-modal.components-reconnect-show .components-rejoining-animation,
-    #components-reconnect-modal.components-reconnect-paused .components-pause-visible,
-    #components-reconnect-modal.components-reconnect-resume-failed .components-resume-failed-visible,
-    #components-reconnect-modal.components-reconnect-retrying,
-    #components-reconnect-modal.components-reconnect-retrying .components-reconnect-repeated-attempt-visible,
-    #components-reconnect-modal.components-reconnect-retrying .components-rejoining-animation,
-    #components-reconnect-modal.components-reconnect-failed,
-    #components-reconnect-modal.components-reconnect-failed .components-reconnect-failed-visible {
-        display: block;
-    }
-</style>
-
 <dialog id="components-reconnect-modal" data-nosnippet>
     <div class="components-reconnect-container">
         <div class="components-rejoining-animation" aria-hidden="true">
