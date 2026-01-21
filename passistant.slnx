@@ -8,4 +8,6 @@
   </Folder>
   <Project Path="src/Passistant.AppHost/Passistant.AppHost.csproj" />
   <Project Path="src/Passistant.Common/Passistant.Common.csproj" Id="07ac56f0-6066-4ded-b38a-b335769f5ef8" />
+  <Project Path="src/Passistant.MealPlanner.Client/Passistant.MealPlanner.Client.csproj" />
+  <Project Path="src/Passistant.MealPlanner/Passistant.MealPlanner.csproj" />
 </Solution>

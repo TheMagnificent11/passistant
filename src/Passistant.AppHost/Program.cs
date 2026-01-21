@@ -33,7 +33,11 @@ var databaseServer = Environments.IsIntegrationTesting
         .WithDataVolume(isReadOnly: false)
         .WithPgWeb();
 
-_ = databaseServer.AddDatabase(ServiceNames.MealPlannerDatabase);
+var mealPlannerDatabase = databaseServer.AddDatabase(ServiceNames.MealPlannerDatabase);
+
+builder.AddProject<Projects.Passistant_MealPlanner>(ServiceNames.MealPlannerApp)
+    .WithReference(mealPlannerDatabase)
+    .WaitFor(mealPlannerDatabase);
 
 var app = builder.Build();
 
