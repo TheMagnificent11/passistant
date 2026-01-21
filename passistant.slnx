@@ -1,1 +1,11 @@
-<Solution />
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="src/Passistant.AppHost/Passistant.AppHost.csproj" />
+  <Project Path="src/Passistant.Common/Passistant.Common.csproj" Id="07ac56f0-6066-4ded-b38a-b335769f5ef8" />
+</Solution>
