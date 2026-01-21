@@ -10,8 +10,8 @@ applyTo: "**/*"
 |------------|---------|---------|---------------|
 | .NET | 10.0 | Runtime and SDK | [docs.microsoft.com](https://docs.microsoft.com/dotnet) |
 | .NET Aspire | Latest | Service orchestration | [learn.microsoft.com/aspire](https://learn.microsoft.com/dotnet/aspire) |
-| PostgreSQL | Latest | Database for Mealie | [postgresql.org](https://postgresql.org) |
-| Mealie | v3.9.2 | Recipe manager and meal planner | [mealie.io](https://mealie.io/) |
+| PostgreSQL | Latest | Database server | [postgresql.org](https://postgresql.org) |
+| Keycloak | Latest | Authentication and authorization | [keycloak.org](https://www.keycloak.org/) |
 
 ## Package Version Strategy
 

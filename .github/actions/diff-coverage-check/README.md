@@ -43,8 +43,8 @@ A composite GitHub Action that checks code coverage for changed source files and
 ### Success
 ```
 🔍 Checking diff coverage for 2 changed files...
-✅ src/Lewee.Domain/AggregateRoot.cs: 100.0% (16/16 lines)
-✅ src/Lewee.Application/CommandResult.cs: 95.5% (21/22 lines)
+✅ src/Passistant.Domain/AggregateRoot.cs: 100.0% (16/16 lines)
+✅ src/Passistant.Application/CommandResult.cs: 95.5% (21/22 lines)
 
 📊 Coverage Summary:
    • Changed files: 2
@@ -58,8 +58,8 @@ A composite GitHub Action that checks code coverage for changed source files and
 ### Failure
 ```
 🔍 Checking diff coverage for 2 changed files...
-❌ src/Lewee.Common/EnumExtensions.cs: 70.0% (14/20 lines)
-✅ src/Lewee.Domain/AggregateRoot.cs: 100.0% (16/16 lines)
+❌ src/Passistant.Common/EnumExtensions.cs: 70.0% (14/20 lines)
+✅ src/Passistant.Domain/AggregateRoot.cs: 100.0% (16/16 lines)
 
 📊 Coverage Summary:
    • Changed files: 2
@@ -68,7 +68,7 @@ A composite GitHub Action that checks code coverage for changed source files and
 
 ❌ DIFF COVERAGE CHECK FAILED
    1 of 2 checked files are below 90% coverage:
-   - src/Lewee.Common/EnumExtensions.cs: 70.0% (need ~4 more covered lines)
+   - src/Passistant.Common/EnumExtensions.cs: 70.0% (need ~4 more covered lines)
 
 💡 Please add tests to increase coverage for the files listed above.
 ```
