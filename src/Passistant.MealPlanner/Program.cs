@@ -1,5 +1,5 @@
 using MudBlazor.Services;
-using Passistant.MealPlanner.Components;
+using Passistant.MealPlanner;
 
 var builder = WebApplication.CreateBuilder(args);
 

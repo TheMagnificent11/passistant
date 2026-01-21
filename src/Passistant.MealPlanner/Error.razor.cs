@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Components;
 
-namespace Passistant.MealPlanner.Components.Pages;
+namespace Passistant.MealPlanner;
 
 public partial class Error
 {
