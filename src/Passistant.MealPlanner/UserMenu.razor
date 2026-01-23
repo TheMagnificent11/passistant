@@ -1,0 +1,39 @@
+@inject NavigationManager Navigation
+
+<AuthorizeView>
+    <Authorized>
+        <MudMenu AnchorOrigin="Origin.BottomRight" 
+                 TransformOrigin="Origin.TopRight"
+                 Dense="true">
+            <ActivatorContent>
+                <MudIconButton Icon="@Icons.Material.Filled.AccountCircle" 
+                               Color="Color.Inherit" 
+                               Edge="Edge.End" />
+            </ActivatorContent>
+            <ChildContent>
+                <MudMenuItem>Hello, @context.User.Identity?.Name!</MudMenuItem>
+                <MudDivider />
+                <MudMenuItem OnClick="@SignOut">
+                    <MudIcon Icon="@Icons.Material.Filled.Logout" Class="mr-2" Size="Size.Small" />
+                    Sign Out
+                </MudMenuItem>
+            </ChildContent>
+        </MudMenu>
+    </Authorized>
+    <NotAuthorized>
+        <MudButton Href="@($"/authentication/login?returnUrl={Uri.EscapeDataString(Navigation.Uri)}")"
+                   Color="Color.Inherit"
+                   Variant="Variant.Text"
+                   StartIcon="@Icons.Material.Filled.Login">
+            Sign In
+        </MudButton>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private void SignOut()
+    {
+        // Force a full page reload to initiate server-side logout
+        Navigation.NavigateTo("/authentication/logout", forceLoad: true);
+    }
+}

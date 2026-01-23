@@ -71,6 +71,8 @@ app.UseAuthorization();
 
 app.UseAntiforgery();
 
+app.MapGroup("/authentication").MapLoginAndLogout();
+
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
