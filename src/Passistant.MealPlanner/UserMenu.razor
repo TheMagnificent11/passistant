@@ -4,11 +4,12 @@
     <Authorized>
         <MudMenu AnchorOrigin="Origin.BottomRight"
                  TransformOrigin="Origin.TopRight"
-                 Dense="true">
+                 Dense="true"
+                 ActivationEvent="@MouseEvent.LeftClick">
             <ActivatorContent>
-                <MudIconButton Icon="@Icons.Material.Filled.AccountCircle"
-                               Color="Color.Inherit"
-                               Edge="Edge.End" />
+                <MudButton Variant="Variant.Text"
+                           Color="Color.Inherit"
+                           StartIcon="@Icons.Material.Filled.AccountCircle" />
             </ActivatorContent>
             <ChildContent>
                 <MudMenuItem>Hello, @context.User.Identity?.Name!</MudMenuItem>
@@ -20,20 +21,4 @@
             </ChildContent>
         </MudMenu>
     </Authorized>
-    <NotAuthorized>
-        <MudButton Href="@($"/authentication/login?returnUrl={Uri.EscapeDataString(Navigation.Uri)}")"
-                   Color="Color.Inherit"
-                   Variant="Variant.Text"
-                   StartIcon="@Icons.Material.Filled.Login">
-            Sign In
-        </MudButton>
-    </NotAuthorized>
 </AuthorizeView>
-
-@code {
-    private void SignOut()
-    {
-        // Force a full page reload to initiate server-side logout
-        Navigation.NavigateTo("/authentication/logout", forceLoad: true);
-    }
-}
