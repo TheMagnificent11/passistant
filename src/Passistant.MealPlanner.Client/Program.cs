@@ -4,5 +4,7 @@ using MudBlazor.Services;
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
 builder.Services.AddMudServices();
+builder.Services.AddAuthorizationCore();
+builder.Services.AddAuthenticationStateDeserialization();
 
 await builder.Build().RunAsync();

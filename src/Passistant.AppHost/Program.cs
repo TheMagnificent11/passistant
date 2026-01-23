@@ -37,7 +37,9 @@ var mealPlannerDatabase = databaseServer.AddDatabase(ServiceNames.MealPlannerDat
 
 builder.AddProject<Projects.Passistant_MealPlanner>(ServiceNames.MealPlannerApp)
     .WithReference(mealPlannerDatabase)
-    .WaitFor(mealPlannerDatabase);
+    .WithReference(authServer)
+    .WaitFor(mealPlannerDatabase)
+    .WaitFor(authServer);
 
 var app = builder.Build();
 
