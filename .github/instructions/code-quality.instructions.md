@@ -10,8 +10,8 @@ applyTo: "**/*.cs,**/*.csproj"
 |------|--------|--------|
 | Warnings as Errors | Enabled | Build fails on any warning |
 | Code Style in Build | Enforced | Style violations break the build |
-| Documentation Generation | Required | All framework projects must generate XML docs |
-| Code Coverage | Required for Framework | Pull requests with changes to `src/` directory (Lewee packages) must have at least 90% line coverage |
+| Documentation Generation | Optional | Not required for application projects |
+| Code Coverage | Recommended | Aim for high coverage on business logic |
 
 ## Dependency Management
 
@@ -35,39 +35,17 @@ All build configuration is centrally managed through a hierarchy of configuratio
 
 **Root Configuration Files:**
 - `Directory.Build.props` - Global MSBuild properties applied to all projects
-- `Tests.props` - Shared test project configuration
 - `.editorconfig` - Global code style rules and analyzer settings
 
 **Directory-Specific Configuration:**
-- `src/Directory.Build.props` - Framework package-specific properties (inherits from root)
-- `tests/Directory.Build.props` - Test project properties (inherits from root and Tests.props)
-- `sample/Directory.Build.props` - Sample application properties (inherits from root)
-- `sample-tests/Directory.Build.props` - Sample test properties (inherits from root and Tests.props)
+- `tests/Directory.Build.props` - Test project properties (inherits from root)
 - `tests/.editorconfig` - Test-specific analyzer rules (inherits from root)
-- `sample/.editorconfig` - Sample-specific analyzer rules (inherits from root)
-- `sample-tests/.editorconfig` - Sample test-specific analyzer rules (inherits from root)
 
 **Root `Directory.Build.props` Contains:**
 - Target framework (.NET 10.0) and language version
 - Global build settings (warnings as errors, code style enforcement)
 - Repository metadata (URL, authors, etc.)
 - Analyzer package references (Meziantou, SonarAnalyzer, StyleCop, etc.)
-
-**`Tests.props` Contains:**
-- Test framework package references (xUnit, FluentAssertions, etc.)
-- Test-specific property settings
-- Code coverage exclusion attributes
-
-**Directory-Specific `Directory.Build.props` Files:**
-- `src/` - Package generation, XML documentation, symbol packages, nullable reference types
-- `tests/` - Imports Tests.props for test-specific configuration
-- `sample/` - Nullable reference types, warning suppressions, code coverage exclusion
-- `sample-tests/` - Imports Tests.props for test-specific configuration
-
-**Directory-Specific `.editorconfig` Files:**
-- `tests/` - CA1707 suppression for underscores in test method names
-- `sample/` - SA1313 suppressions for Effects and Reducer parameter naming
-- `sample-tests/` - CA1707 suppression for underscores in sample test method names
 
 **Never add these properties to individual project files:**
 - `<GenerateDocumentationFile>`
@@ -94,7 +72,7 @@ All build configuration is centrally managed through a hierarchy of configuratio
 
 **Format Command:**
 ```bash
-dotnet format lewee.sln
+dotnet format
 ```
 
 **Configuration:**
@@ -108,11 +86,8 @@ dotnet format lewee.sln
 - [ ] No unused usings or variables
 - [ ] No magic strings or numbers, use constants or enums
 - [ ] Address compiler information messages that result for Roslyn analyzers
-- [ ] XML documentation for public and protected APIs **only** for C# projects within the `src` directory (Lewee framework packages)
-- [ ] No XML documentation for sample application code (`sample/` directory)
+- [ ] XML documentation for public APIs when appropriate
 - [ ] Follows existing patterns in the codebase
-- [ ] Framework changes (`src/` directory) have at least 90% line coverage
-- [ ] No magic strings for Playwright/bUnit selectors; expose a constant from the component and use that instead
 - [ ] Limit lines to a maximum of 120 characters where possible, using one parameter or statement per line
 
 ## Logging

@@ -1,0 +1,24 @@
+@inject NavigationManager Navigation
+
+<AuthorizeView>
+    <Authorized>
+        <MudMenu AnchorOrigin="Origin.BottomRight"
+                 TransformOrigin="Origin.TopRight"
+                 Dense="true"
+                 ActivationEvent="@MouseEvent.LeftClick">
+            <ActivatorContent>
+                <MudButton Variant="Variant.Text"
+                           Color="Color.Inherit"
+                           StartIcon="@Icons.Material.Filled.AccountCircle" />
+            </ActivatorContent>
+            <ChildContent>
+                <MudMenuItem>Hello, @context.User.Identity?.Name!</MudMenuItem>
+                <MudDivider />
+                <MudMenuItem OnClick="@SignOut">
+                    <MudIcon Icon="@Icons.Material.Filled.Logout" Class="mr-2" Size="Size.Small" />
+                    Sign Out
+                </MudMenuItem>
+            </ChildContent>
+        </MudMenu>
+    </Authorized>
+</AuthorizeView>

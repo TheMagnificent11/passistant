@@ -1,0 +1,36 @@
+﻿<script type="module" src="@Assets["ReconnectModal.razor.js"]"></script>
+
+<dialog id="components-reconnect-modal" data-nosnippet>
+    <div class="components-reconnect-container">
+        <div class="components-rejoining-animation" aria-hidden="true">
+            <MudProgressCircular Color="Color.Primary" Indeterminate="true" Size="Size.Large" />
+        </div>
+        <MudText Typo="Typo.body1" Class="components-reconnect-first-attempt-visible">
+            Rejoining the server...
+        </MudText>
+        <MudText Typo="Typo.body1" Class="components-reconnect-repeated-attempt-visible">
+            Rejoin failed... trying again in <span id="components-seconds-to-next-attempt"></span> seconds.
+        </MudText>
+        <MudText Typo="Typo.body1" Class="components-reconnect-failed-visible">
+            Failed to rejoin.<br />Please retry or reload the page.
+        </MudText>
+        <MudButton Variant="Variant.Filled"
+                   Color="Color.Primary"
+                   id="components-reconnect-button"
+                   Class="components-reconnect-failed-visible">
+            Retry
+        </MudButton>
+        <MudText Typo="Typo.body1" Class="components-pause-visible">
+            The session has been paused by the server.
+        </MudText>
+        <MudText Typo="Typo.body1" Class="components-resume-failed-visible">
+            Failed to resume the session.<br />Please retry or reload the page.
+        </MudText>
+        <MudButton Variant="Variant.Filled"
+                   Color="Color.Primary"
+                   id="components-resume-button"
+                   Class="components-pause-visible components-resume-failed-visible">
+            Resume
+        </MudButton>
+    </div>
+</dialog>

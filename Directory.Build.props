@@ -3,15 +3,16 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <LangVersion>14.0</LangVersion>
+    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <PackageProjectUrl>TODO</PackageProjectUrl>
-    <RepositoryUrl>TODO</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/TheMagnificent11/passistant</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TheMagnificent11/passistant.git</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <Authors>TODO</Authors>
-    <Company>TODO</Company>
+    <Authors>Saji Weerasingham</Authors>
+    <Company>Lewee Pty Ltd</Company>
     <AnalysisLevel>latest</AnalysisLevel>
     <AnalysisMode>All</AnalysisMode>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
