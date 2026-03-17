@@ -43,7 +43,7 @@
     <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.4.0" />
   </ItemGroup>
   <ItemGroup Label="Microsoft (Other)">
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
